@@ -32,5 +32,10 @@ namespace AgoraVideoCall.Agora.Views
         {
 
         }
+
+        private void OnSwitchCameraClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
