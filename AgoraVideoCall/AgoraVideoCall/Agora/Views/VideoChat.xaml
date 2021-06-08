@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgoraVideoCall.Agora.Views.VideoChat"
+             xmlns:VM="clr-namespace:AgoraVideoCall.Agora.ViewModels">
+
+    <ContentPage.BindingContext>
+        <VM:VideoChatViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <RelativeLayout x:Name="ContainerLayout" HeightRequest="{Binding ContainerHeight}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#803a4fb7">
+          
+            <RelativeLayout IsVisible="true" WidthRequest="90" HeightRequest="110" Margin="15,26,0,0" BackgroundColor="LightGray"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-118}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=-226}">
+                
+            </RelativeLayout>
+            <StackLayout x:Name="RelativeFooter" 
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Constant=0}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=-80}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=80}">
+
+                <StackLayout Orientation="Horizontal" Spacing="55" HorizontalOptions="Center" Margin="0,15,0,15" >
+                    
+                    <Image Source="ic_cam_active_call.png" WidthRequest="50"
+                           HeightRequest="50" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLocalVideoMuteClicked"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image Source="ic_mic_active_call.png" WidthRequest="50"
+                           HeightRequest="50" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLocalAudioMuteClicked"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image Source="ic_end_call.png" WidthRequest="50"
+                           HeightRequest="50" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnEncCallClicked"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    
+                </StackLayout>
+
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

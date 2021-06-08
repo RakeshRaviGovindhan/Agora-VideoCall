@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgoraVideoCall.Agora.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace AgoraVideoCall
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new VideoChat();
         }
 
         protected override void OnStart()
