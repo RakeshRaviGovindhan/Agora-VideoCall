@@ -11,11 +11,41 @@
     <ContentPage.Content>
         <RelativeLayout x:Name="ContainerLayout" HeightRequest="{Binding ContainerHeight}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#803a4fb7">
           
+            <StackLayout RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-45}"
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=15}">
+
+                <Image Source="close.png" WidthRequest="30"
+                       HeightRequest="30" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnEncCallClicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+            </StackLayout>
+            
             <RelativeLayout IsVisible="true" WidthRequest="90" HeightRequest="110" Margin="15,26,0,0" BackgroundColor="LightGray"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-118}"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=-226}">
+
+                <Image Source="ic_mic_muted_call.png" WidthRequest="30"
+                           HeightRequest="30" Margin="6">
+                </Image>
+
+                <StackLayout RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-34}"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=-32}">
+
+                    <Image Source="ic_switch_camera_call.png" WidthRequest="30"
+                       HeightRequest="30" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSwitchCameraClicked"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    
+                </StackLayout>
                 
+
             </RelativeLayout>
+            
             <StackLayout x:Name="RelativeFooter" 
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Constant=0}"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=-80}"
