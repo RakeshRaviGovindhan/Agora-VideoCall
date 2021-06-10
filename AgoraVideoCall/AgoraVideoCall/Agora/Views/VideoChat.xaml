@@ -9,13 +9,16 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <RelativeLayout x:Name="ContainerLayout" HeightRequest="{Binding ContainerHeight}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#803a4fb7">
+        <RelativeLayout x:Name="ContainerLayout" HeightRequest="{Binding ContainerHeight}" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand" 
+                        BackgroundColor="#121111">
           
-            <StackLayout RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-45}"
+            <StackLayout RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-40}"
                          RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=15}">
 
-                <Image Source="close.png" WidthRequest="30"
-                       HeightRequest="30" VerticalOptions="Center">
+                <Image Source="closevideochat_red.png" WidthRequest="22"
+                       HeightRequest="22" VerticalOptions="Center">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnEncCallClicked"/>
                     </Image.GestureRecognizers>
