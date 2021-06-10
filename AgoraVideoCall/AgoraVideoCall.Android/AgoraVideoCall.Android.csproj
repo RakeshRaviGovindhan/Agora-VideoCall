@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,7 +59,7 @@
       <Version>13.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugins.Settings">
-      <Version>4.0.0.10-beta</Version>
+      <Version>4.1.0-beta</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Agora.Full.Android">
       <Version>3.4.2</Version>
@@ -67,6 +68,8 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agora\AgoraRtcHandler.cs" />
+    <Compile Include="Agora\RoomActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,9 +95,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Agora\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AgoraVideoCall\AgoraVideoCall.csproj">
       <Project>{BAB96859-927B-4EE7-B907-BCA5D3D9F160}</Project>
@@ -433,6 +434,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\CloseVideoChat_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\CloseVideoChat_red.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
