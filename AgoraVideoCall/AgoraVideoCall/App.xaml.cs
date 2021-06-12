@@ -11,7 +11,7 @@ namespace AgoraVideoCall
         {
             InitializeComponent();
 
-            MainPage = new VideoChat();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
