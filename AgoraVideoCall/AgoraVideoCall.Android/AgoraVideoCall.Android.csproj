@@ -68,6 +68,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agora\AgoraQualityHandler.cs" />
     <Compile Include="Agora\AgoraRtcHandler.cs" />
     <Compile Include="Agora\RoomActivity.cs" />
     <Compile Include="MainActivity.cs" />

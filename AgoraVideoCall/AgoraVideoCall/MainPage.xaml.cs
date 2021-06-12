@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AgoraVideoCall.Agora.Helpers;
+using AgoraVideoCall.Agora.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +15,12 @@ namespace AgoraVideoCall
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void OnJoin(object sender, EventArgs e)
+        {
+            DependencyService.Get<IVideoHandler>().OnJoin();
+            Navigation.PushAsync(new VideoChat());
         }
     }
 }

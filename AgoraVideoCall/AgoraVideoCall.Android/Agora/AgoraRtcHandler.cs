@@ -1,4 +1,6 @@
-﻿using Android.App;
+﻿using AgoraVideoCall.Agora.Helpers;
+using AgoraVideoCall.Droid.Agora;
+using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
@@ -8,11 +10,14 @@ using DT.Xamarin.Agora;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
+
+[assembly: Xamarin.Forms.Dependency(typeof(AgoraRtcHandler))]
 namespace AgoraVideoCall.Droid.Agora
 {
-    public class AgoraRtcHandler : IRtcEngineEventHandler
+    public class AgoraRtcHandler : IRtcEngineEventHandler, IVideoHandler
     {
         private RoomActivity _context;
 
@@ -56,6 +61,11 @@ namespace AgoraVideoCall.Droid.Agora
         public override void OnTokenPrivilegeWillExpire(string token)
         {
             _context.OnTokenPrivilegeWillExpire(token);
+        }
+
+        public void OnJoin()
+        {
+            _context.OnJoin();
         }
     }
 }
